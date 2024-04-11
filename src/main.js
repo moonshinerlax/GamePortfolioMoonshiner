@@ -2,8 +2,30 @@ import { dialogueDataEN, dialogueDataES, scaleFactor } from "./constants";
 import { k } from "./kaboomCtx";
 import { displayDialogue, setCamScale } from "./utils";
 
-const backgroundMusic = document.getElementById('backgroundMusic');
-backgroundMusic.play();
+document.addEventListener('DOMContentLoaded', function() {
+  const startButton = document.getElementById('startButton');
+  const startBanner = document.getElementById('startBanner');
+  const content = document.getElementById('content');
+  const backgroundMusic = document.getElementById('backgroundMusic');
+
+  startButton.addEventListener('click', function() {
+      // Show the content
+      // startButton.style.display = 'block';
+      
+      // Play the background music
+      backgroundMusic.play()
+          .then(() => {
+              console.log('Audio is playing');
+          })
+          .catch(error => {
+              console.error('Failed to play audio:', error);
+          });
+          startBanner.classList.add('active');
+          setTimeout(function() {
+            startButton.style.display = 'none';
+        }, 1000);
+  });
+});
 
 document.addEventListener("DOMContentLoaded", function() {
   const button = document.getElementById("playbutton");
