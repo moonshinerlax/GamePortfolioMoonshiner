@@ -9,10 +9,7 @@ document.addEventListener('DOMContentLoaded', function() {
   const backgroundMusic = document.getElementById('backgroundMusic');
 
   startButton.addEventListener('click', function() {
-      // Show the content
-      // startButton.style.display = 'block';
       
-      // Play the background music
       backgroundMusic.play()
           .then(() => {
               console.log('Audio is playing');
@@ -22,7 +19,7 @@ document.addEventListener('DOMContentLoaded', function() {
           });
           startBanner.classList.add('active');
           setTimeout(function() {
-            startButton.style.display = 'none';
+            startBanner.style.display = 'none';
         }, 1000);
   });
 });
